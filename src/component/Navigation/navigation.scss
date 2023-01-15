@@ -1,0 +1,108 @@
+@import "../../assets/styles/main";
+
+.navbar {
+  padding: 20px 0;
+
+  .container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    position: relative;
+  }
+
+  &-logo {
+    img {
+      height: 30px;
+    }
+  }
+
+  &-menu {
+    font-size: 25px;
+    text-transform: uppercase;
+
+    ul {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+
+      a {
+        transition: $transition;
+      }
+    }
+
+    .active {
+      color: $active;
+    }
+  }
+
+  &-action {
+    display: flex;
+    gap: 20px;
+    line-height: 1;
+
+    button {
+      border: none;
+      outline: none;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .cartIcon {
+      position: relative;
+
+      span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -50%);
+        font-size: 1.6rem;
+        background-color: $active;
+        padding: 0 5px;
+        height: 1.2em;
+        border-radius: 1.2em;
+        line-height: 1.2em;
+      }
+    }
+
+    .profileButton {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      
+
+      .profileImg {
+        margin-left: 20px;
+
+        img {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          border-radius: 100%;
+        }
+      }
+    }
+  }
+
+  .auth-menu {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 100%;
+    background-color: $white;
+    padding: 10px;
+    box-shadow: $boxShadow;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+    max-width: 150px;
+    width: 100%;
+    border-radius: 5px;
+    animation-timing-function: ease;
+    transform-origin: right center;
+  }
+}
