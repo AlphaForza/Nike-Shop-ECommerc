@@ -4,7 +4,6 @@ import logo from '../../logo.svg';
 import { Link, NavLink } from 'react-router-dom';
 import {
 	AiOutlineLogin,
-	AiOutlineLogout,
 	AiOutlineShoppingCart,
 } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';

@@ -14,7 +14,6 @@ const sliceUser = createSlice({
 				JSON.stringify(action.payload)
 			);
 			state.isLogged = true;
-			console.log(state.user);
 		},
 		currentUser: (state, action) => {
 			state.user = action.payload;
@@ -28,6 +27,7 @@ const sliceUser = createSlice({
 		},
 		likeToggle: (state, action) => {
 			let copyUser = { ...state.user };
+
 			if (copyUser.hasOwnProperty('favorites')) {
 				let index = copyUser.favorites.indexOf(action.payload);
 
@@ -40,8 +40,8 @@ const sliceUser = createSlice({
 				copyUser.favorites = [];
 				copyUser.favorites.push(action.payload);
 			}
-			state.user = copyUser;
 			console.log(copyUser);
+			state.user = copyUser;
 		},
 	},
 });
