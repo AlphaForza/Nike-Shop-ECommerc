@@ -1,9 +1,7 @@
 import React from 'react';
 
 function Favorite(props) {
-    return (
-        <div>Favorite</div>
-    );
+	return <div>Favorite Page</div>;
 }
 
 export default Favorite;
