@@ -40,7 +40,7 @@ const sliceUser = createSlice({
 				copyUser.favorites = [];
 				copyUser.favorites.push(action.payload);
 			}
-			console.log(copyUser);
+
 			state.user = copyUser;
 		},
 	},
