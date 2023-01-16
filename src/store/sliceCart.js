@@ -26,6 +26,7 @@ const sliceCart = createSlice({
 
 		addToCart: (state, action) => {
 			let copyCart = [...state.cart];
+
 			let foundIndex = null;
 			copyCart.find((el, index) => {
 				if (el.id === action.payload.id) {

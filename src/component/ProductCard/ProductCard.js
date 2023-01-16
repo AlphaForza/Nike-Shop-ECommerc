@@ -3,7 +3,7 @@ import './productcard.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../store/sliceCart';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
-import { likeToggle } from '../../store/sliceUser';
+import { favoriteArray, likeToggle } from '../../store/sliceUser';
 
 function ProductCard({ product }) {
 	const dispatch = useDispatch();
@@ -21,11 +21,17 @@ function ProductCard({ product }) {
 					<>
 						{user.favorites?.includes(product.id) ? (
 							<AiFillHeart
-								onClick={() => dispatch(likeToggle(product.id))}
+								onClick={() => {
+									dispatch(likeToggle(product.id));
+									dispatch(favoriteArray(product));
+								}}
 							/>
 						) : (
 							<AiOutlineHeart
-								onClick={() => dispatch(likeToggle(product.id))}
+								onClick={() => {
+									dispatch(likeToggle(product.id));
+									dispatch(favoriteArray(product));
+								}}
 							/>
 						)}
 					</>

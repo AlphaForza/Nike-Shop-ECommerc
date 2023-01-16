@@ -5,6 +5,7 @@ const sliceUser = createSlice({
 	initialState: {
 		user: {},
 		isLogged: false,
+		favorite: [],
 	},
 	reducers: {
 		login: (state, action) => {
@@ -43,9 +44,35 @@ const sliceUser = createSlice({
 
 			state.user = copyUser;
 		},
+
+		favoriteArray: (state, action) => {
+			let copyArray = state.favorite;
+
+			let foundIndex = null;
+			copyArray.find((el, index) => {
+				if (el.id === action.payload.id) {
+					foundIndex = index;
+					return;
+				}
+			});
+			if (foundIndex === null) {
+				copyArray.push(action.payload);
+			} else {
+				copyArray.splice(foundIndex, 1);
+			}
+
+			state.favorite = copyArray;
+
+			console.log(state.favorite);
+		},
 	},
 });
 
-export const { login, logout, likeToggle, currentUser } =
-	sliceUser.actions;
+export const {
+	login,
+	logout,
+	likeToggle,
+	currentUser,
+	favoriteArray,
+} = sliceUser.actions;
 export default sliceUser.reducer;
