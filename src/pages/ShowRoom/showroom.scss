@@ -6,6 +6,18 @@
 
   aside {
     width: 300px;
+    
+    .filter{
+      text-align: center;
+      text-transform: uppercase;
+      color: rgb(255, 144, 144);
+    }
+
+    .low{
+      display: flex;
+      align-items: center;
+      gap:20px;
+    }
   }
 
   article {

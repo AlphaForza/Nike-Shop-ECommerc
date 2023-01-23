@@ -10,7 +10,11 @@ function ShowRoom() {
 	return (
 		<section className='showroom container'>
 			<aside>
-				<h2>filter price</h2>
+				<h2 className='filter'>Filter Price</h2>
+				<div className='low'>
+					<p>From lower to bigger</p>
+					<input type='checkbox' name='low' id='' />
+				</div>
 			</aside>
 			<article>
 				{products[category].map((el, index) => {
