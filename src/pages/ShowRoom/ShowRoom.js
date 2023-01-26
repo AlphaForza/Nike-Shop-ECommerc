@@ -11,14 +11,18 @@ function ShowRoom() {
 	const { category } = useParams();
 	const [productSort, setProductSort] = useState([]);
 
+	// here i get both input(radio button) and after change category in useEffect i clear checked activity
 	let activeSort = useRef();
+	let activeSortTwo = useRef();
 
 	useEffect(() => {
 		setProductSort(products[category]);
 		// disable radio button to false
 		activeSort.current.checked = false;
+		activeSortTwo.current.checked = false;
 	}, [category]);
 
+	// here from Event i make logic for price sort! or last 'else' random from product
 	function filterByPrice(event) {
 		if (event.target.value === 'low') {
 			let copySort = productSort.slice();
@@ -53,7 +57,7 @@ function ShowRoom() {
 					/>
 					<p>From bigger to lower</p>
 					<input
-						ref={activeSort}
+						ref={activeSortTwo}
 						onClick={(event) => filterByPrice(event)}
 						type='radio'
 						name='sort'
