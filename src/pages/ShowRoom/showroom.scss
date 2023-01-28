@@ -6,7 +6,33 @@
 
   aside {
     width: 300px;
-    
+    .inputContainer{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button{
+        padding: 13px;
+        border: none;
+        border-bottom: 2px solid #ddd;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        color: rgb(255, 144, 144);
+        cursor: pointer;
+      }
+    }
+    .inputShoes{
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid #ddd;
+      margin: 20px 0;
+      padding: 10px 10px;
+      font-size: 18px;
+
+      &:focus{
+        outline: none;
+      }
+    }
     .filter{
       text-align: center;
       text-transform: uppercase;

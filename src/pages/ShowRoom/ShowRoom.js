@@ -14,6 +14,7 @@ function ShowRoom() {
 	// here i get both input(radio button) and after change category in useEffect i clear checked activity
 	let activeSort = useRef();
 	let activeSortTwo = useRef();
+	let inputValue = useRef();
 
 	useEffect(() => {
 		setProductSort(products[category]);
@@ -40,10 +41,39 @@ function ShowRoom() {
 			setProductSort(products[category]);
 		}
 	}
+	// here i will make function for filter one specific product
+	function findProduct() {
+		// make copyArray then work with same
+		let copySort = productSort.slice();
+		// first i check if product is already in this [array] then go and set in state
+		let filterProduct = copySort.filter((el) => {
+			return el.title
+				.toLowerCase()
+				.includes(inputValue.current.value.toLowerCase());
+		});
+		// check if product is already then set and clear input
+		if (inputValue.current.value.length > 0) {
+			setProductSort(filterProduct);
+			inputValue.current.value = '';
+		} else {
+			// or if empty then refresh allProducts
+			setProductSort(products[category]);
+		}
+	}
 
 	return (
 		<section className='showroom container'>
 			<aside>
+				<h2 className='filter'>Find some shoes</h2>
+				<div className='inputContainer'>
+					<input
+						ref={inputValue}
+						className='inputShoes'
+						type='text'
+						placeholder='Search...'
+					/>
+					<button onClick={findProduct}>Find</button>
+				</div>
 				<h2 className='filter'>Filter Price</h2>
 				<div className='filter-category'>
 					<p>From lower to bigger</p>
