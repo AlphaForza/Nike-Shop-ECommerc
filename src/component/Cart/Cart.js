@@ -19,33 +19,39 @@ function Cart({ animateStyle }) {
 								<img src={el.img} alt='' />
 							</div>
 							<div>
-								<p>{el.title}</p>
-								<p> ${el.price}</p>
-								<button
-									onClick={() =>
-										dispatch(
-											changeCount({
-												increment: 1,
-												index,
-											})
-										)
-									}>
-									<AiFillPlusCircle />
-								</button>
-								{el.count}
-								<button
-									onClick={() =>
-										dispatch(
-											changeCount({
-												increment: -1,
-												index,
-											})
-										)
-									}>
-									<AiFillMinusCircle />
-								</button>
+								<p className='card-product-title'>{el.title}</p>
+								<p className='card-product-price'> ${el.price}</p>
+								<div className='count-section'>
+									<button
+										onClick={() =>
+											dispatch(
+												changeCount({
+													increment: 1,
+													index,
+												})
+											)
+										}>
+										<AiFillPlusCircle />
+									</button>
+									<span className='card-product-count'>
+										{el.count}
+									</span>
+									<button
+										onClick={() =>
+											dispatch(
+												changeCount({
+													increment: -1,
+													index,
+												})
+											)
+										}>
+										<AiFillMinusCircle />
+									</button>
+								</div>
 							</div>
-							<button onClick={() => dispatch(removeFromCart(index))}>
+							<button
+								className='removeBtn'
+								onClick={() => dispatch(removeFromCart(index))}>
 								<BsTrash />
 							</button>
 						</Fragment>

@@ -6,6 +6,9 @@ import { useDispatch } from 'react-redux';
 import Auth from '../../services/Auth';
 import { login } from '../../store/sliceUser';
 
+// css
+import './login.scss';
+
 function Login() {
 	const dispatch = useDispatch();
 
@@ -35,7 +38,7 @@ function Login() {
 	};
 
 	return (
-		<Modal>
+		<Modal className='login'>
 			<form className='form-register' onSubmit={submitHandler}>
 				<input
 					type='email'
@@ -49,12 +52,14 @@ function Login() {
 					name='password'
 					onInput={inputHandler}
 				/>
-				<button>Login</button>
-				<button
-					type='button'
-					onClick={() => dispatch(toggleModal({ login: false }))}>
-					Cancel
-				</button>
+				<div className='buttonSection'>
+					<button type='submit'>Login</button>
+					<button
+						type='button'
+						onClick={() => dispatch(toggleModal({ login: false }))}>
+						Cancel
+					</button>
+				</div>
 			</form>
 		</Modal>
 	);

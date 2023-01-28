@@ -1,12 +1,12 @@
 import React from 'react';
-import "./modal.scss"
+import './modal.scss';
 
-function Modal({children}) {
-    return (
-        <div className="modal-box">
-            <div>{children}</div>
-        </div>
-    );
+function Modal({ children }) {
+	return (
+		<div className='modal-box'>
+			<div>{children}</div>
+		</div>
+	);
 }
 
 export default Modal;

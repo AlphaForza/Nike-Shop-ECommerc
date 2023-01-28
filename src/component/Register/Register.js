@@ -51,14 +51,16 @@ function Register() {
 					name='imgURL'
 					onInput={handlerInput}
 				/>
-				<button>Register</button>
-				<button
-					type='button'
-					onClick={() => {
-						dispatch(toggleModal({ register: false }));
-					}}>
-					Cancel
-				</button>
+				<div className='buttonSection'>
+					<button>Register</button>
+					<button
+						type='button'
+						onClick={() => {
+							dispatch(toggleModal({ register: false }));
+						}}>
+						Cancel
+					</button>
+				</div>
 			</form>
 		</Modal>
 	);

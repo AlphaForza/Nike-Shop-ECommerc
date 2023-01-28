@@ -9,4 +9,42 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  div{
+   .form-register{
+    background-color: rgb(172, 172, 172);
+   display: flex;
+   width: 100%;
+   align-items: center;
+   justify-content: center;
+   padding: 30px;
+   border-radius: 20px;
+
+   input{
+    border: none;
+    border-bottom: 1px solid rgb(255, 67, 33);
+    background-color: transparent;
+    border-radius: 0px;
+    color: #fff;
+    font-size: 18px;
+
+    &:focus{
+      outline: none;
+    }
+   }
+
+   .buttonSection{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+
+    button{
+      border: none;
+      color: #fff;
+      background: rgb(255, 67, 33);
+    }
+   }
+   }
+  }
 }
