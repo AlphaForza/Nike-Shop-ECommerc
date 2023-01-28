@@ -8,6 +8,14 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     position: relative;
+
+    @media screen and (max-width: 468px) {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 20px;
+    }
   }
 
   &-logo {
